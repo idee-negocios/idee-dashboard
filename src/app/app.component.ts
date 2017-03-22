@@ -15,4 +15,5 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.media.broadcast();
   }
+
 }

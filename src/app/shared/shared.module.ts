@@ -1,15 +1,19 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CovalentCoreModule } from '@covalent/core';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, CovalentCoreModule
   ],
   exports: [
-    CovalentCoreModule
+    CovalentCoreModule,
+    SidenavComponent,
+    ToolbarComponent
   ],
-  declarations: []
+  declarations: [SidenavComponent, ToolbarComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

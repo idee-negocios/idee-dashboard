@@ -1,0 +1,21 @@
+<md-sidenav-container>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="openSidenav()">
+      <md-icon>menu</md-icon>
+    </button>
+
+    <span>IDEE Dashboard</span>
+
+    <span flex></span>
+
+    <md-slide-toggle
+        color="primary"
+        [(ngModel)]="isDark"
+        (change)="toggleTheme($event)">
+      Tema
+    </md-slide-toggle>
+  </md-toolbar>
+
+  <ng-content></ng-content>
+
+</md-sidenav-container>

@@ -1,0 +1,28 @@
+<md-sidenav
+    #sidenav
+    class="sidenav"
+    mode="side"
+    (focusout)="close()">
+  <h1 class="sidenav-title text-center">
+    Menú
+    <button md-icon-button
+            (click)="close()"
+            class="close-button">
+      <md-icon>chevron_left</md-icon>
+    </button>
+  </h1>
+
+  <md-nav-list>
+    <a md-list-item >
+      <md-icon>search</md-icon>
+      Contactos
+    </a>
+
+    <md-divider></md-divider>
+
+    <a md-list-item (click)="logout()">
+      <md-icon>directions_run</md-icon>
+      Salir
+    </a>
+  </md-nav-list>
+</md-sidenav>
