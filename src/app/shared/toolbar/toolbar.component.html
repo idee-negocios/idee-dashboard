@@ -2,9 +2,9 @@
       icon="view_compact"
       toolbarTitle="IDEE"
       navigationRoute="/"
-      [opened]="media.registerQuery('gt-sm') | async"
-      [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
-      [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
+      [opened]="isDesktop"
+      [mode]="sidenavMode"
+      [sidenavWidth]="sidenavWidth">
 
   <md-nav-list td-sidenav-content
                (click)="!media.query('gt-sm') && navList.close()">
@@ -22,8 +22,22 @@
   </md-nav-list>
 
   <div td-toolbar-content layout="row" flex>
-    <span>Dashboard</span>
     <span flex></span>
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>perm_contact_calendar</md-icon>
+        <span>Contactos</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>directions_run</md-icon>
+        <span>Salir</span>
+      </button>
+    </md-menu>
+
   </div>
 
   <ng-content></ng-content>

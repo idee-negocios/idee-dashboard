@@ -6,11 +6,20 @@ import { TdMediaService } from '@covalent/core';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+  isDesktop: boolean;
+  sidenavWidth: string;
+  sidenavMode: string;
+
   constructor(public media: TdMediaService) {}
 
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
+  ngOnInit() {
+    this.media.registerQuery('gt-xs').subscribe((desktop: boolean) => {
+      this.isDesktop = desktop;
+      this.sidenavWidth = desktop ? '350px' : '100%';
+      this.sidenavMode = desktop ? 'side' : 'over';
+    });
+
     this.media.broadcast();
   }
 }
