@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { TdMediaService } from '@covalent/core';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
-  isDark: boolean = false;
+export class ToolbarComponent {
+  constructor(public media: TdMediaService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
   }
-
-  toggleTheme() {
-    this.isDark = !this.isDark;
-  }
-
 }

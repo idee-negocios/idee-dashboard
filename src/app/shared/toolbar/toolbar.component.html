@@ -1,21 +1,35 @@
-<md-sidenav-container>
-  <md-toolbar color="primary">
-    <button md-icon-button (click)="openSidenav()">
-      <md-icon>menu</md-icon>
-    </button>
+<td-layout-nav-list #navList
+      icon="view_compact"
+      toolbarTitle="IDEE"
+      navigationRoute="/"
+      [opened]="media.registerQuery('gt-sm') | async"
+      [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
+      [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
 
-    <span>IDEE Dashboard</span>
+  <md-nav-list td-sidenav-content
+               (click)="!media.query('gt-sm') && navList.close()">
+    <a md-list-item>
+      <md-icon md-list-avatar>view_compact</md-icon>
+      <h3 md-line>Item Name</h3>
+      <p md-line>item description</p>
+    </a>
+    <md-divider md-inset></md-divider>
+    <a md-list-item>
+      <md-icon md-list-avatar>view_quilt</md-icon>
+      <h3 md-line>Item Name</h3>
+      <p md-line>item description</p>
+    </a>
+  </md-nav-list>
 
+  <div td-toolbar-content layout="row" flex>
+    <span>Dashboard</span>
     <span flex></span>
-
-    <md-slide-toggle
-        color="primary"
-        [(ngModel)]="isDark"
-        (change)="toggleTheme($event)">
-      Tema
-    </md-slide-toggle>
-  </md-toolbar>
+  </div>
 
   <ng-content></ng-content>
 
-</md-sidenav-container>
+  <td-layout-footer-inner>
+    Optional inner footer
+  </td-layout-footer-inner>
+
+</td-layout-nav-list>
