@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CovalentCoreModule } from '@covalent/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -8,6 +9,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     CommonModule, CovalentCoreModule
   ],
   exports: [
+    CommonModule,
+    ReactiveFormsModule,
     CovalentCoreModule,
     ToolbarComponent
   ],

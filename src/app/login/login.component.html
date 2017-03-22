@@ -1,3 +1,45 @@
-<p>
-  login works!
-</p>
+<div layout="row" layout-margin layout-align="center center">
+  <md-card flex="50">
+    <md-card-title>Login</md-card-title>
+
+    <md-divider></md-divider>
+
+    <md-card-content>
+      <form [formGroup]="loginForm">
+
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input
+                mdInput
+                placeholder="Usuario"
+                formControlName="username">
+          </md-input-container>
+        </div>
+
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input
+                mdInput
+                type="password"
+                placeholder="Contraseña"
+                formControlName="password">
+          </md-input-container>
+        </div>
+
+      </form>
+    </md-card-content>
+
+    <md-divider></md-divider>
+
+    <md-card-actions>
+      <div layout="row" layout-margin layout-align="end center">
+        <button
+            md-raised-button
+            color="primary"
+            class="text-upper">
+          Entrar
+        </button>
+      </div>
+    </md-card-actions>
+  </md-card>
+</div>

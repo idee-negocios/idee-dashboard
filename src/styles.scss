@@ -1,1 +1,9 @@
 @import 'styles/theme';
+
+// EXTRA
+.mat-divider {
+  display: block;
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin: 0;
+}
