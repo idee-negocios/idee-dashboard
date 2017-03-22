@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
@@ -9,10 +9,9 @@ import 'rxjs/add/observable/throw';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   constructor(public router: Router,
-              public media: TdMediaService,
-              private fb: AngularFire ) {
+              private fb: AngularFire) {
     this.fb.auth.subscribe(auth => console.log(auth))
 
     this.fb.auth.login({
@@ -25,10 +24,6 @@ export class AppComponent implements AfterViewInit {
     this.fb.database.list('/idee-dashboard').subscribe(list => {
       console.log(list);
     });
-  }
-
-  ngAfterViewInit() {
-    this.media.broadcast();
   }
 
 }
