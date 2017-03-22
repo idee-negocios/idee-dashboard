@@ -11,7 +11,8 @@ import { firebaseConfig } from './firebase.config';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { ContactModule } from './contact/contact.module';
+import { LoginModule } from './login/login.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { ContactModule } from './contact/contact.module';
     FormsModule,
     HttpModule,
     CovalentCoreModule.forRoot(),
-    AppRoutingModule,
     SharedModule.forRoot(),
-    ContactModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AppRoutingModule,
+    LoginModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

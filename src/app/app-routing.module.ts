@@ -7,7 +7,7 @@ import { SharedModule } from './shared/shared.module';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/contact',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
