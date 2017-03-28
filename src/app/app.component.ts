@@ -12,17 +12,9 @@ import 'rxjs/add/observable/throw';
 export class AppComponent {
   constructor(public router: Router,
               private fb: AngularFire) {
-    this.fb.auth.subscribe(auth => console.log(auth))
-
     this.fb.auth.login({
       provider: AuthProviders.Anonymous,
       method: AuthMethods.Anonymous
-    })
-
-    this.fb.database.list('/idee-dashboard/hola').push({c: true});
-
-    this.fb.database.list('/idee-dashboard').subscribe(list => {
-      console.log(list);
     });
   }
 
