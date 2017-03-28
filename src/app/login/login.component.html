@@ -1,8 +1,7 @@
 <div layout="row" layout-margin layout-align="center center">
-  <md-card flex="50">
+  <md-card flex-gt-sm="50" flex-gt-md="30" flex-xs>
     <md-card-title>Login</md-card-title>
-
-    <md-divider></md-divider>
+    <md-card-subtitle>Ingrese usuario y contraseña</md-card-subtitle>
 
     <md-card-content>
       <form [formGroup]="loginForm">
@@ -35,6 +34,8 @@
       <div layout="row" layout-margin layout-align="end center">
         <button
             md-raised-button
+            (click)="login()"
+            [disabled]="!loginForm.valid"
             color="primary"
             class="text-upper">
           Entrar
