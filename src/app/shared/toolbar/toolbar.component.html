@@ -6,22 +6,12 @@
       [mode]="sidenavMode"
       [sidenavWidth]="sidenavWidth">
 
-  <md-nav-list td-sidenav-content
-               (click)="!media.query('gt-sm') && navList.close()">
-    <a md-list-item>
-      <md-icon md-list-avatar>view_compact</md-icon>
-      <h3 md-line>Item Name</h3>
-      <p md-line>item description</p>
-    </a>
-    <md-divider md-inset></md-divider>
-    <a md-list-item>
-      <md-icon md-list-avatar>view_quilt</md-icon>
-      <h3 md-line>Item Name</h3>
-      <p md-line>item description</p>
-    </a>
-  </md-nav-list>
-
   <div td-toolbar-content layout="row" flex>
+    <button
+        md-icon-button
+        mdTooltip="Crear proyecto">
+      <md-icon>add</md-icon>
+    </button>
     <button md-raised-button color="accent" [mdMenuTriggerFor]="projectMenu">
       <md-icon>keyboard_arrow_down</md-icon>
       {{buttonName}}
@@ -29,11 +19,6 @@
     <md-menu #projectMenu="mdMenu">
       <button md-menu-item (click)="selectProject()">
         <span>John Jarana</span>
-      </button>
-      <md-divider></md-divider>
-      <button md-menu-item>
-        <md-icon>add</md-icon>
-        <span>Nuevo</span>
       </button>
     </md-menu>
     <button
@@ -61,6 +46,21 @@
     </button>
 
   </div>
+
+  <md-nav-list td-sidenav-content
+               (click)="!media.query('gt-sm') && navList.close()">
+    <a md-list-item>
+      <md-icon md-list-avatar>view_compact</md-icon>
+      <h3 md-line>Item Name</h3>
+      <p md-line>item description</p>
+    </a>
+    <md-divider md-inset></md-divider>
+    <a md-list-item>
+      <md-icon md-list-avatar>view_quilt</md-icon>
+      <h3 md-line>Item Name</h3>
+      <p md-line>item description</p>
+    </a>
+  </md-nav-list>
 
   <ng-content></ng-content>
 

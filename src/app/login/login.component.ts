@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthProviders } from 'angularfire2';
 
 import { LoginService } from '../shared/services/index';
 
@@ -18,14 +19,28 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   login() {
-    this.loginService.login();
-    this.router.navigate(['contact']);
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+
+    this.loginService.login(email, password).subscribe(user => {
+      if(user.provider === AuthProviders.Password
+         && user.auth.email
+         && !user.anonymous) {
+        // Logged in
+        console.log(user);
+      } else {
+        // Error
+        console.log('Nop', user);
+      }
+    }, err => console.log(err));
+
+    // this.router.navigate(['contact']);
   }
 
 }

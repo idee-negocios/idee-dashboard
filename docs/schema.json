@@ -1,7 +1,15 @@
 "idee-dashboard": {
+  // user
+  // privilegies: 0 => admin, 1 => employ, 2 => customer
+  "users": {
+    "UID": { // row
+      "privilegies": "number"
+    }
+  }
+
   // login
   "projects": {
-    "project1": {
+    "PROJECT_NAME": { // row
       "contact": {
         "ID": {
           "viewed": "boolean"
@@ -12,7 +20,7 @@
 
   // anonymous
   "contact": {
-    "project1": [
+    "PROJECT_NAME": [ // row
       "ID": {
         // contacts
         "date": "date"
@@ -26,30 +34,5 @@
         }
       }
     ]
-  }
-}
-
-// Example
-"idee-dashboard": {
-  "projects": {
-    "john-jarana": {
-      "contact": {
-        "AC1A4C": {
-          "viewed": false
-        }
-      }
-    }
-  },
-  "contact": {
-    "john-jarana": {
-      "AC1A4C": {
-        "date": "febrero 25º 2017, 11:49:43 pm",
-        "email": "Ideenegocios@gmail.com",
-        "message": "Hola Alan! Estoy probando, quedo genial",
-        "name": "Facundo",
-        "phone": "155510559",
-        "type": "existing-business"
-      }
-    }
   }
 }
