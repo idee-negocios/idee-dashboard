@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
-              private login: LoginService) { }
+              private loginService: LoginService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.login.login();
+    this.loginService.login();
     this.router.navigate(['contact']);
   }
 
