@@ -1,3 +1,12 @@
-<p>
-  contact works!
-</p>
+<md-card>
+  <td-data-table
+  [data]="basicData"
+  [columns]="columns">
+  <template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
+    <div layout="row">
+      <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
+      <md-icon>star</md-icon>
+    </div>
+  </template>
+</td-data-table>
+</md-card>
