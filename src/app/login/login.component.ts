@@ -22,25 +22,26 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.loginService.state.subscribe(user => {
+      if(user.provider === AuthProviders.Password
+         && user.auth.email
+         && !user.anonymous) {
+        // Logged in
+        console.log(user);
+        this.router.navigate(['contact']);
+      } else {
+        // Error
+        console.log('Nop', user);
+      }
+    });
   }
 
   login() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
-    this.loginService.login(email, password).subscribe(user => {
-      if(user.provider === AuthProviders.Password
-         && user.auth.email
-         && !user.anonymous) {
-        // Logged in
-        console.log(user);
-      } else {
-        // Error
-        console.log('Nop', user);
-      }
-    }, err => console.log(err));
-
-    // this.router.navigate(['contact']);
+    this.loginService.login(email, password);
   }
 
 }

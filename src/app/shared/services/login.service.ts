@@ -11,21 +11,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class LoginService {
 
-  constructor(private fb: AngularFire) {
-    this.fb.auth.subscribe(user => {
-      console.log(user);
-    });
+  constructor(private fb: AngularFire) { }
+
+  get state() {
+    return this.fb.auth.asObservable();
   }
 
-  login(email: string, password: string): Observable<FirebaseAuthState> {
+  login(email: string, password: string) {
     this.fb.auth.login({email, password},
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password
       }
     );
-
-    return this.fb.auth.asObservable();
   }
 
   logout() {

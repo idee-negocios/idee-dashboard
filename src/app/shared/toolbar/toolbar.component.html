@@ -7,20 +7,27 @@
       [sidenavWidth]="sidenavWidth">
 
   <div td-toolbar-content layout="row" flex>
-    <button
-        md-icon-button
-        mdTooltip="Crear proyecto">
-      <md-icon>add</md-icon>
+    <button md-icon-button mdTooltip="Inicio">
+      <md-icon>home</md-icon>
     </button>
-    <button md-raised-button color="accent" [mdMenuTriggerFor]="projectMenu">
-      <md-icon>keyboard_arrow_down</md-icon>
-      {{buttonName}}
+
+    <button
+        *ngIf="!media.query('gt-sm')"
+        md-icon-button
+        mdTooltip="Proyectos"
+        [mdMenuTriggerFor]="projectMenu">
+      <md-icon>view_list</md-icon>
+    </button>
+    <button *ngIf="media.query('gt-sm')" md-button [mdMenuTriggerFor]="projectMenu">
+      <md-icon>view_list</md-icon>
+      PROYECTOS
     </button>
     <md-menu #projectMenu="mdMenu">
       <button md-menu-item (click)="selectProject()">
         <span>John Jarana</span>
       </button>
     </md-menu>
+
     <button
         *ngIf="selectedProject"
         md-icon-button
@@ -30,25 +37,26 @@
 
     <span flex></span>
 
-    <button md-button>
-      <md-icon>account_box</md-icon>
-      <span>CUENTA</span>
-    </button>
-
-    <button md-button>
+    <button md-icon-button mdTooltip="Chat">
       <md-icon>group</md-icon>
-      <span>CHAT</span>
     </button>
 
-    <button md-button>
+    <button md-icon-button mdTooltip="Mi cuenta">
+      <md-icon>account_box</md-icon>
+    </button>
+
+    <button md-icon-button mdTooltip="Salir">
       <md-icon>directions_run</md-icon>
-      <span>SALIR</span>
     </button>
 
   </div>
 
   <md-nav-list td-sidenav-content
                (click)="!media.query('gt-sm') && navList.close()">
+    <h3 md-subheader>Qwe</h3>
+
+    <md-divider></md-divider>
+
     <a md-list-item>
       <md-icon md-list-avatar>view_compact</md-icon>
       <h3 md-line>Item Name</h3>
