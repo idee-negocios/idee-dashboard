@@ -51,22 +51,8 @@
 
   </div>
 
-  <md-nav-list td-sidenav-content
-               (click)="!media.query('gt-sm') && navList.close()">
-    <h3 md-subheader>Qwe</h3>
-
-    <md-divider></md-divider>
-
-    <a md-list-item>
-      <md-icon md-list-avatar>view_compact</md-icon>
-      <h3 md-line>Mensajería</h3>
-      <p md-line>Clientes</p>
-    </a>
-    <md-divider md-inset></md-divider>
-    <a md-list-item>
-      <md-icon md-list-avatar>view_quilt</md-icon>
-      <h3 md-line>Estadísticas</h3>
-    </a>
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+    <ng-content select="[nav-list]"></ng-content>
   </md-nav-list>
 
   <ng-content></ng-content>

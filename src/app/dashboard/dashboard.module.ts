@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { ContactModule } from './contact/contact.module';
 import { DashboardComponent } from './dashboard.component';
+import { ProjectModule } from './project/project.module';
+import { SummaryModule } from './summary/summary.module';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    DashboardRoutingModule,
-    ContactModule
+    RouterModule,
+    ProjectModule,
+    SummaryModule
   ],
   declarations: [DashboardComponent]
 })

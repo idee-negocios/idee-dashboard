@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
          && !user.anonymous) {
         // Logged in
         console.log(user);
-        this.router.navigate(['contact']);
+        this.router.navigate(['project', '0', 'contacts']);
       } else {
         // Error
         console.log('Nop', user);
