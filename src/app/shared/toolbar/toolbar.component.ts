@@ -11,6 +11,9 @@ export class ToolbarComponent implements OnInit {
   sidenavWidth: string;
   sidenavMode: string;
 
+  selectedProject: string;
+  buttonName: string;
+
   constructor(public media: TdMediaService) {}
 
   ngOnInit() {
@@ -21,5 +24,12 @@ export class ToolbarComponent implements OnInit {
     });
 
     this.media.broadcast();
+
+    this.buttonName = 'PROYECTOS';
+  }
+
+  selectProject() {
+    this.buttonName = 'John Jarana';
+    this.selectedProject = 'John Jarana';
   }
 }

@@ -22,21 +22,43 @@
   </md-nav-list>
 
   <div td-toolbar-content layout="row" flex>
-    <span flex></span>
-
-    <button md-icon-button [mdMenuTriggerFor]="menu">
-      <md-icon>more_vert</md-icon>
+    <button md-raised-button color="accent" [mdMenuTriggerFor]="projectMenu">
+      <md-icon>keyboard_arrow_down</md-icon>
+      {{buttonName}}
     </button>
-    <md-menu #menu="mdMenu">
-      <button md-menu-item>
-        <md-icon>perm_contact_calendar</md-icon>
-        <span>Contactos</span>
+    <md-menu #projectMenu="mdMenu">
+      <button md-menu-item (click)="selectProject()">
+        <span>John Jarana</span>
       </button>
+      <md-divider></md-divider>
       <button md-menu-item>
-        <md-icon>directions_run</md-icon>
-        <span>Salir</span>
+        <md-icon>add</md-icon>
+        <span>Nuevo</span>
       </button>
     </md-menu>
+    <button
+        *ngIf="selectedProject"
+        md-icon-button
+        mdTooltip="Configurar proyecto">
+      <md-icon>settings</md-icon>
+    </button>
+
+    <span flex></span>
+
+    <button md-button>
+      <md-icon>account_box</md-icon>
+      <span>CUENTA</span>
+    </button>
+
+    <button md-button>
+      <md-icon>group</md-icon>
+      <span>CHAT</span>
+    </button>
+
+    <button md-button>
+      <md-icon>directions_run</md-icon>
+      <span>SALIR</span>
+    </button>
 
   </div>
 

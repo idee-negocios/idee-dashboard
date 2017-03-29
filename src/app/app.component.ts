@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
-import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import 'rxjs/add/observable/throw';
+
+import { LoginService } from './shared/services/index';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,6 @@ import 'rxjs/add/observable/throw';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public router: Router,
-              private fb: AngularFire) {
-    this.fb.auth.login({
-      provider: AuthProviders.Anonymous,
-      method: AuthMethods.Anonymous
-    });
-  }
+  constructor(private router: Router) { }
 
 }
