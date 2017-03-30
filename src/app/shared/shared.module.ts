@@ -6,6 +6,7 @@ import { CovalentCoreModule } from '@covalent/core';
 
 import { LoginService, ProjectService } from './services/index';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -16,8 +17,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ReactiveFormsModule,
     CovalentCoreModule,
     ToolbarComponent,
-    ],
-  declarations: [ToolbarComponent]
+    PageNotFoundComponent
+  ],
+  declarations: [ToolbarComponent, PageNotFoundComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
