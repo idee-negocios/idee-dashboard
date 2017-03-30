@@ -13,6 +13,8 @@ import { LoginService } from '../shared/services/index';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
+  loading: boolean = true;
+
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private loginService: LoginService) { }
@@ -24,16 +26,15 @@ export class LoginComponent implements OnInit {
     });
 
     this.loginService.state.subscribe(user => {
-      if(user.provider === AuthProviders.Password
+      if(user && user.provider === AuthProviders.Password
          && user.auth.email
          && !user.anonymous) {
         // Logged in
         console.log(user);
         this.router.navigate(['project', '0', 'contacts']);
-      } else {
-        // Error
-        console.log('Nop', user);
       }
+
+      this.loading = false;
     });
   }
 

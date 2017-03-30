@@ -6,7 +6,7 @@ import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
   {
-    path: 'summary',
+    path: 'admin',
     component: AdminComponent,
     children: [
       {

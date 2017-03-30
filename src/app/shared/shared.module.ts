@@ -1,6 +1,7 @@
-  import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CovalentCoreModule } from '@covalent/core';
 
 import { LoginService, ProjectService } from './services/index';
@@ -8,7 +9,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   imports: [
-    CommonModule, CovalentCoreModule
+    CommonModule, RouterModule, CovalentCoreModule
   ],
   exports: [
     CommonModule,

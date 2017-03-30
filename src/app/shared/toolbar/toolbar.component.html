@@ -6,12 +6,13 @@
       [sidenavWidth]="sidenavWidth">
 
   <div td-toolbar-content layout="row" flex>
-    <button md-icon-button mdTooltip="Administración">
+    <button
+        [routerLink]="['/admin', 'projects']"
+        md-icon-button mdTooltip="Administración">
       <md-icon>web</md-icon>
     </button>
 
-    <button
-        *ngIf="!media.query('gt-sm')"
+    <button *ngIf="!media.query('gt-sm')"
         md-icon-button
         mdTooltip="Proyectos"
         [mdMenuTriggerFor]="projectMenu">
@@ -44,7 +45,7 @@
       <md-icon>account_box</md-icon>
     </button>
 
-    <button md-icon-button mdTooltip="Salir">
+    <button md-icon-button mdTooltip="Salir" (click)="logout()">
       <md-icon>directions_run</md-icon>
     </button>
 
