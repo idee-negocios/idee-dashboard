@@ -18,7 +18,7 @@ export class AppComponent {
               private iconRegistry: MdIconRegistry) {
     // Logo
     this.iconRegistry.addSvgIconInNamespace('assets', 'logo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/logo1.svg'));
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/logo.svg'));
 
   }
 
