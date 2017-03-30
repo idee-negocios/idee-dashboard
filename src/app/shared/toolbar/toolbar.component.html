@@ -51,9 +51,9 @@
 
   </div>
 
-  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
     <ng-content select="[nav-list]"></ng-content>
-  </md-nav-list>
+  </div>
 
   <ng-content></ng-content>
 
