@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="306"
+   height="69"
+   viewBox="0 0 306 69"
+   version="1.1"
+   id="svg4467"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.1 r">
+  <metadata
+     id="metadata4473">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4471" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1360"
+     inkscape:window-height="727"
+     id="namedview4469"
+     showgrid="false"
+     inkscape:zoom="3.7897226"
+     inkscape:cx="149.83623"
+     inkscape:cy="2.6885636"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4467" />
+  <style
+     id="style4694"
+     type="text/css">.st0{fill:#010202;}
+	.st1{fill:#D51317;}</style>
+  <g
+     id="g4699"
+     transform="matrix(0.16459687,0,0,0.16459687,32.792649,1.3147024)">
+    <title
+       id="title4696">background</title>
+    <rect
+       style="fill:none"
+       id="canvas_background"
+       height="414.29999"
+       width="310.89999"
+       y="-1"
+       x="-1" />
+  </g>
+  <g
+     id="XMLID_4_"
+     transform="matrix(0.45674127,0,0,0.45674127,111.66762,-82.289394)">
+    <path
+       id="XMLID_1499_"
+       class="st0"
+       d="M 6.4,181.5 H 29.9 V 331 H 6.4 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#010202" />
+    <path
+       id="XMLID_1496_"
+       class="st0"
+       d="m 57.7,181.5 h 37.2 c 23.5,0 35,13 35,37 V 294 c 0,23.9 -11.5,37 -35,37 H 57.7 Z m 23.5,21.3 v 106.8 h 13.2 c 7.5,0 12,-3.8 12,-14.5 v -77.7 c 0,-10.7 -4.5,-14.5 -12,-14.5 H 81.2 Z"
+       inkscape:connector-curvature="0"
+       style="fill:#010202" />
+    <path
+       id="XMLID_1494_"
+       class="st1"
+       d="m 190.7,202.8 h -40.6 v -21.4 h 64.1 V 331 h -64.1 v -21.4 h 40.6 v -43.8 h -32.3 v -21.4 h 32.3 z"
+       inkscape:connector-curvature="0"
+       style="fill:#d51317" />
+    <path
+       id="XMLID_1492_"
+       class="st0"
+       d="m 262.9,244.5 h 32.3 v 21.4 h -32.3 v 43.8 h 40.6 V 331 H 239.4 V 181.5 h 64.1 v 21.4 h -40.6 z"
+       inkscape:connector-curvature="0"
+       style="fill:#010202" />
+  </g>
+  <g
+     id="XMLID_3_"
+     transform="matrix(0.51750393,0,0,0.51750393,-21.088438,-1.5045225)">
+    <polygon
+       id="XMLID_13_"
+       class="st1"
+       points="208.20001,83.800003 158.70001,71.600006 201.60001,3.5999985 "
+       style="fill:#d51317" />
+    <polygon
+       id="XMLID_8_"
+       class="st1"
+       points="158.70001,79.699997 158.70001,134.8 207,91.899994 "
+       style="fill:#d51317" />
+    <polygon
+       id="XMLID_10_"
+       class="st1"
+       points="101.70001,83.800003 151.20001,71.600006 108.29999,3.5999985 "
+       style="fill:#d51317" />
+    <polygon
+       id="XMLID_9_"
+       class="st1"
+       points="151.20001,79.699997 151.20001,134.8 102.89999,91.899994 "
+       style="fill:#d51317" />
+  </g>
+</svg>
