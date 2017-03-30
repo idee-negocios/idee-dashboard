@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard.component';
 import { ProjectModule } from './project/project.module';
-import { SummaryModule } from './summary/summary.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { SummaryModule } from './summary/summary.module';
     SharedModule,
     RouterModule,
     ProjectModule,
-    SummaryModule
+    AdminModule
   ],
   declarations: [DashboardComponent]
 })
