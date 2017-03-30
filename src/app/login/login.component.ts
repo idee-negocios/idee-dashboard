@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProviders } from 'angularfire2';
+import { Subscription } from 'rxjs/Subscription';
 
 import { LoginService } from '../shared/services/index';
 
@@ -10,9 +11,10 @@ import { LoginService } from '../shared/services/index';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
 
+  loginSubscription: Subscription;
   loading: boolean = true;
 
   constructor(private router: Router,
@@ -25,17 +27,20 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.loginService.state.subscribe(user => {
+    this.loginSubscription = this.loginService.state.subscribe(user => {
       if(user && user.provider === AuthProviders.Password
          && user.auth.email
          && !user.anonymous) {
         // Logged in
-        console.log(user);
         this.router.navigate(['project', '0', 'contacts']);
       }
 
       this.loading = false;
     });
+  }
+
+  ngOnDestroy() {
+    this.loginSubscription.unsubscribe();
   }
 
   login() {
