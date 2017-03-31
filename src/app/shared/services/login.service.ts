@@ -17,6 +17,8 @@ export class LoginService {
     this.state.subscribe(user => {
       if(!user) {
         this.router.navigate(['/login']);
+      } else {
+        console.log(user);
       }
     });
   }

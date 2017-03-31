@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
-import { DashboardComponent } from './dashboard.component';
 import { ProjectModule } from './project/project.module';
 import { AdminModule } from './admin/admin.module';
 
@@ -15,6 +14,6 @@ import { AdminModule } from './admin/admin.module';
     ProjectModule,
     AdminModule
   ],
-  declarations: [DashboardComponent]
+  declarations: []
 })
 export class DashboardModule { }

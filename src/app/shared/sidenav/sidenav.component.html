@@ -1,0 +1,11 @@
+<md-nav-list>
+  <template ngFor let-route [ngForOf]="routes">
+    <a md-list-item>
+      <md-icon md-list-avatar>{{route.icon}}</md-icon>
+      <h3 md-line>{{route.title}}</h3>
+      <p md-line>{{route.description}}</p>
+    </a>
+
+    <md-divider md-inset></md-divider>
+  </template>
+</md-nav-list>

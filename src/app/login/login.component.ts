@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
 
     this.loginSubscription = this.loginService.state.subscribe(user => {
+      // If user is logged in he's redirected to /admin
       if(user && user.provider === AuthProviders.Password
          && user.auth.email
          && !user.anonymous) {
         // Logged in
-        this.router.navigate(['project', '0', 'contacts']);
+        this.router.navigate(['admin']);
       }
 
       this.loading = false;
