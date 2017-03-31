@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 
@@ -9,7 +9,7 @@ import { LoginService } from '../services/index';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit, AfterViewInit {
   isDesktop: boolean;
   sidenavWidth: string;
   sidenavMode: string;
@@ -28,9 +28,11 @@ export class ToolbarComponent implements OnInit {
       this.sidenavMode = desktop ? 'side' : 'over';
     });
 
-    this.media.broadcast();
-
     this.buttonName = 'PROYECTOS';
+  }
+
+  ngAfterViewInit() {
+    this.media.broadcast();
   }
 
   selectProject() {

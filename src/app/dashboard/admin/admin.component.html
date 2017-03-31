@@ -1,4 +1,24 @@
-<app-toolbar>
-  <app-sidenav nav-list [routes]="routes"></app-sidenav>
-  <router-outlet></router-outlet>
-</app-toolbar>
+<td-layout #layout>
+
+  <td-navigation-drawer logo="assets:logo" name="Usuario" email="usuario@admin.com">
+
+    <md-nav-list>
+      <template let-item let-last="last" ngFor [ngForOf]="routes">
+        <a md-list-item [routerLink]="item.url" (click)="layout.close()">
+          <md-icon>{{item.icon}}</md-icon>
+          {{item.title}}
+        </a>
+      </template>
+    </md-nav-list>
+
+    <md-nav-list td-navigation-drawer-menu>
+      <a md-list-item (click)="logout()"><md-icon>exit_to_app</md-icon>Sign out</a>
+    </md-nav-list>
+
+  </td-navigation-drawer>
+
+  <app-toolbar>
+    <router-outlet></router-outlet>
+  </app-toolbar>
+
+</td-layout>

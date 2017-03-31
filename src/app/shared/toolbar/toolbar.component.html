@@ -1,68 +1,64 @@
-<td-layout-nav-list #navList
-      logo="assets:logo"
-      navigationRoute="/"
-      [opened]="isDesktop"
-      [mode]="sidenavMode"
-      [sidenavWidth]="sidenavWidth">
+<td-layout-nav logo="assets:logo">
 
-  <div td-toolbar-content layout="row" flex>
-    <button
-        [routerLink]="['/admin', 'projects']"
-        md-icon-button mdTooltip="Administración">
-      <md-icon>web</md-icon>
-    </button>
+  <td-layout-manage-list #manageList
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <md-toolbar td-sidenav-content>
+      <span>Product Name</span>
+    </md-toolbar>
+    <md-nav-list td-sidenav-content>
+      <a md-list-item
+        md-ripple class="block relative"
+        (click)="!media.query('gt-sm') && manageList.close()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/product']">
+        <md-icon md-list-icon>dashboard</md-icon>
+        Dashboard
+      </a>
+      <a md-list-item
+        md-ripple class="block relative"
+        (click)="!media.query('gt-sm') && manageList.close()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['stats']">
+        <md-icon md-list-icon>insert_chart</md-icon>
+        Stats
+      </a>
+      <a md-list-item
+        md-ripple class="block relative"
+        (click)="!media.query('gt-sm') && manageList.close()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['features']">
+        <md-icon md-list-icon>star</md-icon>
+        Features
+      </a>
+      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
+        <md-icon md-list-icon>people</md-icon>
+        Customers
+      </a>
+      <h3 md-subheader>Admin Menu</h3>
+      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
+        <md-icon md-list-icon>receipt</md-icon>
+        Log
+      </a>
+      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
+        <md-icon md-list-icon>settings</md-icon>
+        Settings
+      </a>
+    </md-nav-list>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <span>{{title}}</span>
+      <span flex></span>
+      <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
+      <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
+      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+    </div>
 
-    <button *ngIf="!media.query('gt-sm')"
-        md-icon-button
-        mdTooltip="Proyectos"
-        [mdMenuTriggerFor]="projectMenu">
-      <md-icon>view_list</md-icon>
-    </button>
-    <button *ngIf="media.query('gt-sm')" md-button [mdMenuTriggerFor]="projectMenu">
-      <md-icon>view_list</md-icon>
-      PROYECTOS
-    </button>
-    <md-menu #projectMenu="mdMenu">
-      <button md-menu-item (click)="selectProject()">
-        <span>John Jarana</span>
-      </button>
-    </md-menu>
+    <ng-content></ng-content>
 
-    <button
-        *ngIf="selectedProject"
-        md-icon-button
-        mdTooltip="Configurar proyecto">
-      <md-icon>settings</md-icon>
-    </button>
-
-    <span flex></span>
-
-    <a href="https://appear.in/idee" target="_blank" md-icon-button mdTooltip="Chat">
-      <md-icon>group</md-icon>
-    </a>
-
-    <button md-icon-button mdTooltip="Mi cuenta" [routerLink]="['/not-found']">
-      <md-icon>account_box</md-icon>
-    </button>
-
-    <button md-icon-button mdTooltip="Salir" (click)="logout()">
-      <md-icon>directions_run</md-icon>
-    </button>
-
-  </div>
-
-  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()" >
-    <ng-content select="[nav-list]"></ng-content>
-
-    <button id="close-nav-list-btn" md-icon-button (click)="navList.close()">
-      <md-icon>chevron_left</md-icon>
-    </button>
-  </div>
-
-  <ng-content></ng-content>
-
-  <td-layout-footer-inner>
-    Optional inner footer
-  </td-layout-footer-inner>
-
-</td-layout-nav-list>
+  </td-layout-manage-list>
+</td-layout-nav>
