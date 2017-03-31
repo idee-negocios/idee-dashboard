@@ -4,7 +4,7 @@
 
     <md-nav-list>
       <template let-item let-last="last" ngFor [ngForOf]="routes">
-        <a md-list-item [routerLink]="item.url" (click)="layout.close()">
+        <a md-list-item [routerLink]="item.route" (click)="layout.close()">
           <md-icon>{{item.icon}}</md-icon>
           {{item.title}}
         </a>

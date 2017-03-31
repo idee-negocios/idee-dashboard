@@ -11,7 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: 'projects',
-        component: ProjectsComponent
+        component: ProjectsComponent,
+        children: [
+          {path: 'new', component: ProjectsComponent}
+        ]
       }
     ]
   }

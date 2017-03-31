@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProviders } from 'angularfire2';
 import { Subscription } from 'rxjs/Subscription';
 
-import { LoginService } from '../shared/services/index';
+import { LoginService } from '../shared/services';
 
 @Component({
   selector: 'app-login',

@@ -1,6 +1,5 @@
-export interface Route {
+export interface SidenavItem {
   icon: string;
   title: string;
-  description?: string;
   route: string[];
 }

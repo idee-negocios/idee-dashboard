@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LoginService } from '../shared/services';
 import { Route } from '../models';
 
 @Component({
@@ -9,21 +10,25 @@ import { Route } from '../models';
 })
 export class AdminComponent implements OnInit {
   routes: Route[] = [
-    {icon: 'account_balance', title: 'Contabilidad', url: ['/admin']},
-    {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', url: ['/login']},
-    {icon: 'grid_on', title: 'Calendario', description: 'Asd', url: ['/admin']},
-    {icon: 'account_circle', title: 'Usuarios', description: 'Asd', url: ['/admin']},
-    {icon: 'supervisor_account', title: 'Clientes', description: 'Asd', url: ['/admin']},
-    {icon: 'work', title: 'Proyectos', description: 'Asd', url: ['/admin', 'projects']},
-    {icon: 'extension', title: 'Herramientas', description: 'Asd', url: ['/admin']},
-    {icon: 'folder', title: 'Documentos', description: 'Asd', url: ['/admin']},
-    {icon: 'person_pin', title: 'Empleados', description: 'Asd', url: ['/admin']},
-    {icon: 'trending_up', title: 'Estadísticas', description: 'Asd', url: ['/admin']}
+    {icon: 'account_balance', title: 'Contabilidad', route: ['']},
+    {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', route: ['login']},
+    {icon: 'grid_on', title: 'Calendario', description: 'Asd', route: ['']},
+    {icon: 'account_circle', title: 'Usuarios', description: 'Asd', route: ['']},
+    {icon: 'supervisor_account', title: 'Clientes', description: 'Asd', route: ['']},
+    {icon: 'work', title: 'Proyectos', description: 'Asd', route: ['projects']},
+    {icon: 'extension', title: 'Herramientas', description: 'Asd', route: ['']},
+    {icon: 'folder', title: 'Documentos', description: 'Asd', route: ['']},
+    {icon: 'person_pin', title: 'Empleados', description: 'Asd', route: ['']},
+    {icon: 'trending_up', title: 'Estadísticas', description: 'Asd', route: ['']}
   ].sort((a, b) => a.title < b.title ? -1 : 1);
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 
 }

@@ -5,7 +5,7 @@ import { TdMediaService } from '@covalent/core';
 import 'rxjs/add/observable/throw';
 import { MdIconRegistry} from '@angular/material';
 
-import { LoginService } from './shared/services/index';
+import { LoginService } from './shared/services';
 
 @Component({
   selector: 'app-root',

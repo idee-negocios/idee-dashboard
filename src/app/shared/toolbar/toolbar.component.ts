@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 
-import { LoginService } from '../services/index';
+import { LoginService, SidenavService } from '../services';
 
 @Component({
   selector: 'app-toolbar',
@@ -18,29 +18,11 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   buttonName: string;
 
   constructor(public media: TdMediaService,
-              private loginService: LoginService,
-              private router: Router) {}
+              public sidenavService: SidenavService) {}
 
-  ngOnInit() {
-    this.media.registerQuery('gt-xs').subscribe((desktop: boolean) => {
-      this.isDesktop = desktop;
-      this.sidenavWidth = desktop ? '250px' : '100%';
-      this.sidenavMode = desktop ? 'side' : 'over';
-    });
-
-    this.buttonName = 'PROYECTOS';
-  }
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.media.broadcast();
-  }
-
-  selectProject() {
-    this.buttonName = 'John Jarana';
-    this.selectedProject = 'John Jarana';
-  }
-
-  logout() {
-    this.loginService.logout();
   }
 }

@@ -8,6 +8,16 @@
       <span>Product Name</span>
     </md-toolbar>
     <md-nav-list td-sidenav-content>
+      <a md-list-item *ngFor="let sidenavItem of sidenavService.state | async"
+        md-ripple class="block relative"
+        (click)="!media.query('gt-sm') && manageList.close()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="sidenavItem.route">
+        <md-icon md-list-icon>{{sidenavItem.icon}}</md-icon>
+        {{sidenavItem.title}}
+      </a>
+
       <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
@@ -49,6 +59,7 @@
         Settings
       </a>
     </md-nav-list>
+
     <div td-toolbar-content layout="row" layout-align="start center" flex>
       <span>{{title}}</span>
       <span flex></span>
