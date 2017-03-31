@@ -12,22 +12,26 @@ import { firebaseConfig } from './firebase.config';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginModule } from './login/login.module';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    // Angular modules
     BrowserModule,
     FormsModule,
     HttpModule,
+    // Extra modules
     CovalentCoreModule.forRoot(),
-    SharedModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
+    // Routing
     AppRoutingModule,
+    // App modules
+    SharedModule.forRoot(),
     LoginModule,
-    DashboardModule
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

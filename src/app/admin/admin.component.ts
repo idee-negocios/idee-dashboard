@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Route } from '../../models';
+import { Route } from '../models';
 
 @Component({
   selector: 'app-admin',

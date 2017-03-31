@@ -7,21 +7,22 @@ import { CovalentCoreModule } from '@covalent/core';
 import { LoginService, ProjectService } from './services/index';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   imports: [
     CommonModule, RouterModule, CovalentCoreModule
   ],
   exports: [
+    // Angular modules
     CommonModule,
     ReactiveFormsModule,
+    // Extra modules
     CovalentCoreModule,
+    // Components
     ToolbarComponent,
     PageNotFoundComponent,
-    SidenavComponent
   ],
-  declarations: [ToolbarComponent, PageNotFoundComponent, SidenavComponent]
+  declarations: [ToolbarComponent, PageNotFoundComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
