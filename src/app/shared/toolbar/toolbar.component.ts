@@ -24,7 +24,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
     this.media.registerQuery('gt-xs').subscribe((desktop: boolean) => {
       this.isDesktop = desktop;
-      this.sidenavWidth = desktop ? '350px' : '100%';
+      this.sidenavWidth = desktop ? '250px' : '100%';
       this.sidenavMode = desktop ? 'side' : 'over';
     });
 

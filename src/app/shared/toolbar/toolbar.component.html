@@ -41,7 +41,7 @@
       <md-icon>group</md-icon>
     </a>
 
-    <button md-icon-button mdTooltip="Mi cuenta">
+    <button md-icon-button mdTooltip="Mi cuenta" [routerLink]="['/not-found']">
       <md-icon>account_box</md-icon>
     </button>
 
@@ -51,7 +51,7 @@
 
   </div>
 
-  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
+  <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()" >
     <ng-content select="[nav-list]"></ng-content>
 
     <button id="close-nav-list-btn" md-icon-button (click)="navList.close()">

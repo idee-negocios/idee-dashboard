@@ -9,9 +9,17 @@ import { Route } from '../../models';
 })
 export class AdminComponent implements OnInit {
   routes: Route[] = [
-    {icon: 'view_compact', title: 'Usuarios', description: 'Asd', url: ['/admin']},
-    {icon: 'view_compact', title: 'Estadísticas', description: 'Asd', url: ['/login']},
-  ];
+    {icon: 'account_balance', title: 'Contabilidad', url: ['/admin']},
+    {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', url: ['/login']},
+    {icon: 'grid_on', title: 'Calendario', description: 'Asd', url: ['/admin']},
+    {icon: 'account_circle', title: 'Usuarios', description: 'Asd', url: ['/admin']},
+    {icon: 'supervisor_account', title: 'Clientes', description: 'Asd', url: ['/admin']},
+    {icon: 'work', title: 'Proyectos', description: 'Asd', url: ['/admin', 'projects']},
+    {icon: 'extension', title: 'Herramientas', description: 'Asd', url: ['/admin']},
+    {icon: 'folder', title: 'Documentos', description: 'Asd', url: ['/admin']},
+    {icon: 'person_pin', title: 'Empleados', description: 'Asd', url: ['/admin']},
+    {icon: 'trending_up', title: 'Estadísticas', description: 'Asd', url: ['/admin']}
+  ].sort((a, b) => a.title < b.title ? -1 : 1);
 
   constructor() { }
 

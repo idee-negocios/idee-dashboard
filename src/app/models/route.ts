@@ -1,6 +1,6 @@
 export interface Route {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   url: string[];
 }
