@@ -37,9 +37,9 @@
 
     <span flex></span>
 
-    <button md-icon-button mdTooltip="Chat">
+    <a href="https://appear.in/idee" target="_blank" md-icon-button mdTooltip="Chat">
       <md-icon>group</md-icon>
-    </button>
+    </a>
 
     <button md-icon-button mdTooltip="Mi cuenta">
       <md-icon>account_box</md-icon>
@@ -53,6 +53,10 @@
 
   <div td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
     <ng-content select="[nav-list]"></ng-content>
+
+    <button id="close-nav-list-btn" md-icon-button (click)="navList.close()">
+      <md-icon>chevron_left</md-icon>
+    </button>
   </div>
 
   <ng-content></ng-content>

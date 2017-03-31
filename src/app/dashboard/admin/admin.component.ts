@@ -9,8 +9,8 @@ import { Route } from '../../models';
 })
 export class AdminComponent implements OnInit {
   routes: Route[] = [
-    {icon: 'view_compact', title: 'Usuarios', description: 'Asd'},
-    {icon: 'view_compact', title: 'Estadísticas', description: 'Asd'},
+    {icon: 'view_compact', title: 'Usuarios', description: 'Asd', url: ['/admin']},
+    {icon: 'view_compact', title: 'Estadísticas', description: 'Asd', url: ['/login']},
   ];
 
   constructor() { }

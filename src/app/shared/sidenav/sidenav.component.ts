@@ -12,8 +12,6 @@ export class SidenavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.routes);
-  }
+  ngOnInit() { }
 
 }

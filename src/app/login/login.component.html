@@ -8,7 +8,7 @@
     <md-card-subtitle>Ingrese usuario y contraseña</md-card-subtitle>
 
     <md-card-content>
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (keydown.enter)="loginForm.valid && login()">
 
         <div layout="row" layout-margin>
           <md-input-container flex>
