@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
          && user.auth.email
          && !user.anonymous) {
         // Logged in
-        this.router.navigate(['admin']);
+        this.router.navigate(['/']);
       }
 
       this.loading = false;

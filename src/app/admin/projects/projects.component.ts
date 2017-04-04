@@ -13,7 +13,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sidenavService.set([
-      {icon: 'add', title: 'Custom item', route: ['new']}
+      {icon: 'add', title: 'Custom item', route: ['/projects', 'new']},
+      {icon: 'delete', title: 'Custom item', route: ['/projects', 'new']},
+      {icon: 'add', title: 'Custom item', route: ['/projects', 'new']},
+      {icon: 'add', title: 'Custom item', route: ['/projects', 'new']}
     ]);
   }
 
