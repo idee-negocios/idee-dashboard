@@ -1,75 +1,58 @@
-<td-layout-nav logo="assets:logo">
-
-  <td-layout-manage-list #manageList
-                        [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
-      <span>Product Name</span>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content>
-      <a md-list-item *ngFor="let sidenavItem of sidenavService.state | async"
-        md-ripple class="block relative"
-        (click)="!media.query('gt-sm') && manageList.close()"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="sidenavItem.route">
-        <md-icon md-list-icon>{{sidenavItem.icon}}</md-icon>
-        {{sidenavItem.title}}
-      </a>
-
-      <a md-list-item
-        md-ripple class="block relative"
-        (click)="!media.query('gt-sm') && manageList.close()"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['/product']">
-        <md-icon md-list-icon>dashboard</md-icon>
-        Dashboard
-      </a>
-      <a md-list-item
-        md-ripple class="block relative"
-        (click)="!media.query('gt-sm') && manageList.close()"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['stats']">
-        <md-icon md-list-icon>insert_chart</md-icon>
-        Stats
-      </a>
-      <a md-list-item
-        md-ripple class="block relative"
-        (click)="!media.query('gt-sm') && manageList.close()"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['features']">
-        <md-icon md-list-icon>star</md-icon>
-        Features
-      </a>
-      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
-        <md-icon md-list-icon>people</md-icon>
-        Customers
-      </a>
-      <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
-        <md-icon md-list-icon>receipt</md-icon>
-        Log
-      </a>
-      <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
-        <md-icon md-list-icon>settings</md-icon>
-        Settings
+<td-layout #layout>
+  <td-navigation-drawer logo="assets:logo" name="Usuario" email="usuario@admin.com">
+    <md-nav-list>
+      <template let-item let-last="last" ngFor [ngForOf]="routes">
+        <a md-list-item [routerLink]="item.route" (click)="layout.close()">
+          <md-icon>{{item.icon}}</md-icon>
+          {{item.title}}
+        </a>
+      </template>
+    </md-nav-list>
+    <md-nav-list td-navigation-drawer-menu>
+      <a md-list-item (click)="logout()">
+        <md-icon>exit_to_app</md-icon>
+        Salir
       </a>
     </md-nav-list>
+  </td-navigation-drawer>
 
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span>{{title}}</span>
-      <span flex></span>
-      <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-    </div>
+  <td-layout-nav logo="assets:logo">
+    <td-layout-manage-list #manageList
+                          [opened]="media.registerQuery('gt-sm') | async"
+                          [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                          [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+      <md-toolbar td-sidenav-content>
+        <span>Product Name</span>
+      </md-toolbar>
+      <md-nav-list td-sidenav-content>
+        <a md-list-item *ngFor="let sidenavItem of sidenavService.state | async"
+          md-ripple class="block relative"
+          (click)="!media.query('gt-sm') && manageList.close()"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{exact:true}"
+          [routerLink]="sidenavItem.route">
+          <md-icon md-list-icon>{{sidenavItem.icon}}</md-icon>
+          {{sidenavItem.title}}
+        </a>
 
-    <ng-content></ng-content>
+        <h3 md-subheader>Admin Menu</h3>
+        <a md-list-item (click)="!media.query('gt-sm') && manageList.close()" md-ripple class="block relative">
+          <md-icon md-list-icon>settings</md-icon>
+          Settings
+        </a>
+      </md-nav-list>
 
-  </td-layout-manage-list>
-</td-layout-nav>
+      <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <span>{{title}}</span>
+        <span flex></span>
+        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+      </div>
+
+      <ng-content></ng-content>
+
+    </td-layout-manage-list>
+  </td-layout-nav>
+</td-layout>
