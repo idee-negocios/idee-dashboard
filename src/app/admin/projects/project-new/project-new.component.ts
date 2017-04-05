@@ -14,7 +14,7 @@ export class ProjectNewComponent implements OnInit {
   ngOnInit() {
     this.newProjectForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
-      owner: ['']
+      owner: ['', [Validators.required]]
     });
   }
 

@@ -1,21 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LoginService } from '../shared/services';
-import { Route } from '../models';
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  constructor(private loginService: LoginService) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
-
-  logout() {
-    this.loginService.logout();
-  }
+  ngOnInit() { }
 
 }

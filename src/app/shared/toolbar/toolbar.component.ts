@@ -32,6 +32,7 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   ].sort((a, b) => a.title < b.title ? -1 : 1);
 
   constructor(public media: TdMediaService,
+              private loginService: LoginService,
               public sidenavService: SidenavService) {}
 
   ngOnInit() { }
@@ -39,4 +40,9 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.media.broadcast();
   }
+
+  logout() {
+    this.loginService.logout();
+  }
+
 }

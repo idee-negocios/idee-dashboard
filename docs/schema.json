@@ -9,7 +9,7 @@
 
   // login
   "projects": {
-    "PROJECT_NAME": { // row
+    "PROJECT_NAME": { // row, slug
       "contact": {
         "ID": {
           "viewed": "boolean"
