@@ -1,0 +1,29 @@
+<md-card>
+  <md-card-title>Crear nuevo proyecto</md-card-title>
+
+  <md-divider></md-divider>
+
+  <md-card-content>
+
+      <form [formGroup]="newProjectForm" (submit)="$event.preventDefault(); createProject()">
+
+        <div layout="row" layout-margin>
+          <md-input-container flex>
+            <input mdInput placeholder="Nombre de proyecto" formControlName="name">
+          </md-input-container>
+          <md-input-container flex>
+            <input mdInput placeholder="Propietario" formControlName="owner">
+          </md-input-container>
+        </div>
+
+        <div layout="row" layout-margin layout-align="end center">
+          <button md-raised-button color="primary">
+            CREAR
+          </button>
+        </div>
+
+      </form>
+
+  </md-card-content>
+
+</md-card>

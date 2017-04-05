@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectNewComponent } from './projects/project-new/project-new.component';
+import { ProjectsManagementComponent } from './projects/projects-management/projects-management.component';
 
 const routes: Routes = [
   {
@@ -13,7 +15,8 @@ const routes: Routes = [
         path: 'projects',
         component: ProjectsComponent,
         children: [
-          {path: 'new', component: ProjectsComponent}
+          {path: 'new', component: ProjectNewComponent},
+          {path: 'management', component: ProjectsManagementComponent}
         ]
       }
     ]

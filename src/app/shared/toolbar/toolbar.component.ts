@@ -20,11 +20,11 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
 
   routes: Route[] = [
     {icon: 'account_balance', title: 'Contabilidad', route: ['']},
-    {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', route: ['login']},
+    {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', route: ['']},
     {icon: 'grid_on', title: 'Calendario', description: 'Asd', route: ['']},
     {icon: 'account_circle', title: 'Usuarios', description: 'Asd', route: ['']},
     {icon: 'supervisor_account', title: 'Clientes', description: 'Asd', route: ['']},
-    {icon: 'work', title: 'Proyectos', description: 'Asd', route: ['projects']},
+    {icon: 'work', title: 'Proyectos', description: 'Asd', route: ['/projects']},
     {icon: 'extension', title: 'Herramientas', description: 'Asd', route: ['']},
     {icon: 'folder', title: 'Documentos', description: 'Asd', route: ['']},
     {icon: 'person_pin', title: 'Empleados', description: 'Asd', route: ['']},
