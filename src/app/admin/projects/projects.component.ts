@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TdMediaService } from '@covalent/core';
 
 import { Route } from '../../models';
 
@@ -13,9 +14,10 @@ export class ProjectsComponent implements OnInit {
     {icon: 'settings', title: 'Gestionar', route: ['/projects', 'management']}
   ];
 
-  constructor() { }
+  constructor(private media: TdMediaService) { }
 
   ngOnInit() {
+    this.media.broadcast();
   }
 
 }
