@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CovalentCoreModule } from '@covalent/core';
 
-import { LoginService, ProjectService, SidenavService } from './services';
+import { LoginService, ProjectService } from './services';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -28,7 +28,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [LoginService, SidenavService, ProjectService]
+      providers: [LoginService, ProjectService]
     }
   }
 }

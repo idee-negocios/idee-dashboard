@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 
 import { Route } from '../../models';
-import { LoginService, SidenavService } from '../services';
+import { LoginService } from '../services';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,13 +11,6 @@ import { LoginService, SidenavService } from '../services';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit, AfterViewInit {
-  isDesktop: boolean;
-  sidenavWidth: string;
-  sidenavMode: string;
-
-  selectedProject: string;
-  buttonName: string;
-
   routes: Route[] = [
     {icon: 'account_balance', title: 'Contabilidad', route: ['']},
     {icon: 'wb_cloudy', title: 'Servidores', description: 'Asd', route: ['']},
@@ -32,8 +25,7 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   ].sort((a, b) => a.title < b.title ? -1 : 1);
 
   constructor(public media: TdMediaService,
-              private loginService: LoginService,
-              public sidenavService: SidenavService) {}
+              private loginService: LoginService) {}
 
   ngOnInit() { }
 
