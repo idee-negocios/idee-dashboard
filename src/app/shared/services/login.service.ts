@@ -11,20 +11,18 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class LoginService {
+  private loggedIn: boolean;
 
   constructor(private router: Router,
               private fb: AngularFire) {
-    this.state.subscribe(user => {
-      if(!user) {
-        this.router.navigate(['/login']);
-      } else {
-        console.log(user);
-      }
-    });
   }
 
   get state() {
     return this.fb.auth.asObservable();
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedIn;
   }
 
   login(email: string, password: string) {
@@ -32,8 +30,17 @@ export class LoginService {
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password
+      });
+
+    this.state.subscribe(user => {
+      if(!user) {
+        this.loggedIn = false;
+        this.router.navigate(['']);
+      } else {
+        this.loggedIn = true;
+        this.router.navigate(['admin']);
       }
-    );
+    });
   }
 
   logout() {

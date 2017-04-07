@@ -10,8 +10,8 @@ import { Route } from '../../models';
 })
 export class ProjectsComponent implements OnInit {
   routes: Route[] = [
-    {icon: 'add', title: 'Crear', route: ['/projects', 'new']},
-    {icon: 'settings', title: 'Gestionar', route: ['/projects', 'management']}
+    {icon: 'add', title: 'Crear', route: ['/admin', 'projects', 'new']},
+    {icon: 'settings', title: 'Gestionar', route: ['/admin', 'projects', 'management']}
   ];
 
   constructor(private media: TdMediaService) { }

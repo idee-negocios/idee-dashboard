@@ -2,21 +2,29 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
+import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectNewComponent } from './projects/project-new/project-new.component';
 import { ProjectsManagementComponent } from './projects/projects-management/projects-management.component';
+import { CanActivateViaAuthGuard } from '../shared/guards';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'admin',
     component: AdminComponent,
     children: [
+      {
+        path: '',
+        // component: HomeComponent
+        redirectTo: 'projects',
+        pathMatch: 'full'
+      },
       {
         path: 'projects',
         component: ProjectsComponent,
         children: [
           {path: 'new', component: ProjectNewComponent},
-          {path: 'management', component: ProjectsManagementComponent}
+          {path: 'management', component: ProjectsManagementComponent},
         ]
       }
     ]
