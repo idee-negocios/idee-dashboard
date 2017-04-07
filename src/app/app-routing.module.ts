@@ -7,6 +7,11 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
     path: 'not-found',
     component: PageNotFoundComponent
   }
