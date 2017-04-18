@@ -1,7 +1,7 @@
 <td-layout #layout>
     <td-navigation-drawer logo="assets:logo" name="Usuario" email="usuario@admin.com">
         <md-nav-list>
-          <template let-item let-last="last" ngFor [ngForOf]="routes">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
             <a *ngIf="item.route[0]"
                 md-list-item
                 [routerLink]="item.route"
@@ -9,7 +9,7 @@
               <md-icon>{{item.icon}}</md-icon>
               {{item.title}}
             </a>
-          </template>
+          </ng-template>
         </md-nav-list>
         <md-nav-list td-navigation-drawer-menu>
           <a md-list-item (click)="logout()">
