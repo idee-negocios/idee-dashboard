@@ -5,7 +5,7 @@
 
   <md-card-content>
 
-      <form [formGroup]="newProjectForm" (submit)="$event.preventDefault(); createProject()">
+      <form [formGroup]="newProjectForm" (submit)="$event.preventDefault(); save(newProjectForm.value)">
 
         <div layout="row" layout-margin>
           <md-input-container flex>
