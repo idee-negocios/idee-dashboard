@@ -26,9 +26,6 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
     {icon: 'access_time', title: 'Tiempo', route: ['/admin', 'time']},
   ].sort((a, b) => a.title < b.title ? -1 : 1);
 
-  appRoutes: Route[] = [
-  ];
-
   constructor(public media: TdMediaService,
               private loginService: LoginService) {}
 

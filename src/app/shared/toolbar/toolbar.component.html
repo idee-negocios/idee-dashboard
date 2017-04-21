@@ -1,18 +1,8 @@
 <td-layout #layout>
     <td-navigation-drawer logo="assets:logo" name="Usuario" email="usuario@admin.com">
         <md-nav-list>
-          <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
-            <a *ngIf="item.route[0]"
-                md-list-item
-                [routerLink]="item.route"
-                (click)="layout.close()">
-              <md-icon>{{item.icon}}</md-icon>
-              {{item.title}}
-            </a>
-          </ng-template>
-
           <h3 md-subheader>Aplicaciones</h3>
-          <ng-template let-item let-last="last" ngFor [ngForOf]="appRoutes">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
             <a *ngIf="item.route[0]"
                 md-list-item
                 [routerLink]="item.route"
