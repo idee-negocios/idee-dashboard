@@ -1,0 +1,23 @@
+<app-toolbar>
+  <div toolbar layout="row" layout-align="start center" flex>
+    <span flex></span>
+  </div>
+
+  <span sidenav-title>Clientes</span>
+
+  <md-nav-list sidenav>
+    <a md-list-item
+        *ngFor="let route of routes"
+        md-ripple
+        class="block relative"
+        (click)="!media.query('gt-sm')"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="route.route">
+      <md-icon md-list-icon>{{route.icon}}</md-icon>
+      {{route.title}}
+    </a>
+  </md-nav-list>
+
+  <router-outlet></router-outlet>
+</app-toolbar>

@@ -5,12 +5,6 @@
 
   <md-card-content>
     <td-data-table [data]="basicData" [columns]="columns">
-      <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
-        <div layout="row">
-          <span flex>{{value}}</span> // or <span flex>{{row[column]}}</span>
-          <md-icon>star</md-icon>
-        </div>
-      </ng-template>
     </td-data-table>
   </md-card-content>
 </md-card>
