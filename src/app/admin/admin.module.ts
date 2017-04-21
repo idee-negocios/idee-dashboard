@@ -18,7 +18,7 @@ import { TimeComponent } from './time/time.component';
 
 // clients
 import { ClientsComponent } from './clients/clients.component';
-import { ClientsNewComponent } from './clients/clients-new/clients-new.component';
+import { ClientNewComponent } from './clients/client-new/client-new.component';
 import { ClientsManagementComponent } from './clients/clients-management/clients-management.component';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { ClientsManagementComponent } from './clients/clients-management/clients
     HomeComponent,
     TimeComponent,
     ClientsComponent,
-    ClientsNewComponent,
+    ClientNewComponent,
     ClientsManagementComponent
   ]
 })
