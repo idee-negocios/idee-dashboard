@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectNewComponent } from './projects/project-new/project-new.component';
 import { ProjectsManagementComponent } from './projects/projects-management/projects-management.component';
+import { TimeComponent } from './time/time.component';
 import { CanActivateViaAuthGuard } from '../shared/guards';
 
 const routes: Routes = [
@@ -25,7 +26,12 @@ const routes: Routes = [
         children: [
           {path: 'new', component: ProjectNewComponent},
           {path: 'management', component: ProjectsManagementComponent},
+          {path: '', redirectTo: 'management', pathMatch: 'full'},
         ]
+      },
+      {
+        path: 'time',
+        component: TimeComponent
       }
     ]
   }

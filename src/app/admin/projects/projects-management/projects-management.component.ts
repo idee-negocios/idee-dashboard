@@ -20,11 +20,14 @@ export class ProjectsManagementComponent implements OnInit {
     { name: 'owner',  label: 'Propietario', sortable:true },
   ];
   basicData: any[] = [];
+  loading: boolean;
 
   constructor(private af: AngularFire) {}
 
   ngOnInit() {
     this.projects = this.af.database.list('/project');
+
+    this.loading = true;
 
     this.projects.subscribe(projects => {
       // projects is an array
@@ -34,6 +37,8 @@ export class ProjectsManagementComponent implements OnInit {
           owner: project.owner
         };
       });
+
+      this.loading = false;
     });
   }
 

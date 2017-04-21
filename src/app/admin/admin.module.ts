@@ -8,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsManagementComponent } from './projects/projects-management/projects-management.component';
 import { ProjectNewComponent } from './projects/project-new/project-new.component';
 import { HomeComponent } from './home/home.component';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     AdminRoutingModule
   ],
-  declarations: [AdminComponent, ProjectsComponent, ProjectsManagementComponent, ProjectNewComponent, HomeComponent]
+  declarations: [AdminComponent, ProjectsComponent, ProjectsManagementComponent, ProjectNewComponent, HomeComponent, TimeComponent]
 })
 export class AdminModule { }

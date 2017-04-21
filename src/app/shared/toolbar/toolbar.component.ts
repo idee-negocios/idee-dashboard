@@ -22,8 +22,12 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
     {icon: 'extension', title: 'Herramientas', description: 'Asd', route: ['']},
     {icon: 'folder', title: 'Documentos', description: 'Asd', route: ['']},
     {icon: 'person_pin', title: 'Empleados', description: 'Asd', route: ['']},
-    {icon: 'trending_up', title: 'Estadísticas', description: 'Asd', route: ['']}
+    {icon: 'trending_up', title: 'Estadísticas', description: 'Asd', route: ['']},
+    {icon: 'access_time', title: 'Tiempo', route: ['/admin', 'time']},
   ].sort((a, b) => a.title < b.title ? -1 : 1);
+
+  appRoutes: Route[] = [
+  ];
 
   constructor(public media: TdMediaService,
               private loginService: LoginService) {}

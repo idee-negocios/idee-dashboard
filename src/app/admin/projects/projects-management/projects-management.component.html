@@ -1,14 +1,9 @@
-<md-card>
+<md-card *ngIf="!loading">
   <md-card-title>Gestionar proyecto</md-card-title>
 
   <md-divider></md-divider>
 
   <md-card-content>
-    <ul>
-      <li *ngFor="let project of projects | async">
-         {{ project.name }}
-      </li>
-    </ul>
     <td-data-table [data]="basicData" [columns]="columns">
       <ng-template tdDataTableTemplate="type" let-value="value" let-row="row" let-column="column">
         <div layout="row">
@@ -16,6 +11,10 @@
           <md-icon>star</md-icon>
         </div>
       </ng-template>
-</td-data-table>
+    </td-data-table>
   </md-card-content>
 </md-card>
+
+<div *ngIf="loading" layout="row" layout-margin layout-align="center center">
+  <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
